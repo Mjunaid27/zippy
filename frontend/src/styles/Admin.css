@@ -1,0 +1,235 @@
+.admin-layout{
+display:flex;
+min-height:100vh;
+background:#F5F7FB;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:260px;
+background:linear-gradient(180deg,#111827,#1F2937);
+padding:30px 20px;
+display:flex;
+flex-direction:column;
+box-shadow:5px 0 20px rgba(0,0,0,.08);
+}
+
+.sidebar h2{
+color:#fff;
+font-size:32px;
+margin-bottom:40px;
+text-align:center;
+letter-spacing:2px;
+}
+
+.sidebar a{
+color:#E5E7EB;
+text-decoration:none;
+padding:15px 18px;
+border-radius:14px;
+margin-bottom:12px;
+font-size:17px;
+font-weight:600;
+transition:.3s;
+}
+
+.sidebar a:hover{
+background:#2563EB;
+color:#fff;
+transform:translateX(5px);
+}
+
+/* Main Content */
+
+.admin-content{
+flex:1;
+padding:40px;
+}
+
+.admin-content h1{
+font-size:34px;
+color:#111827;
+margin-bottom:30px;
+}
+
+/* Dashboard Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:22px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+transition:.35s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(37,99,235,.18);
+}
+
+.card h2{
+font-size:18px;
+margin-bottom:15px;
+color:#6B7280;
+}
+
+.card h1{
+font-size:40px;
+color:#2563EB;
+}
+
+/* Header */
+
+.admin-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+/* Buttons */
+
+.add-btn{
+background:linear-gradient(90deg,#2563EB,#4F46E5);
+color:white;
+padding:12px 24px;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.add-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 30px rgba(37,99,235,.35);
+}
+
+.edit-btn{
+background:#F59E0B;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:10px;
+cursor:pointer;
+margin-right:10px;
+font-weight:600;
+transition:.3s;
+}
+
+.edit-btn:hover{
+background:#D97706;
+}
+
+.delete-btn{
+background:#EF4444;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.delete-btn:hover{
+background:#DC2626;
+}
+
+/* Table */
+
+.admin-table{
+width:100%;
+border-collapse:collapse;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.admin-table th{
+background:#2563EB;
+color:white;
+padding:18px;
+text-align:left;
+font-size:16px;
+}
+
+.admin-table td{
+padding:18px;
+border-bottom:1px solid #F1F5F9;
+font-size:15px;
+}
+
+.admin-table tr:hover{
+background:#F8FAFC;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.admin-layout{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+flex-direction:row;
+overflow-x:auto;
+padding:15px;
+gap:10px;
+}
+
+.sidebar h2{
+display:none;
+}
+
+.sidebar a{
+white-space:nowrap;
+margin-bottom:0;
+}
+
+.admin-content{
+padding:20px;
+}
+
+.admin-header{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.admin-table{
+display:block;
+overflow-x:auto;
+white-space:nowrap;
+}
+
+}
+
+/* Watermark */
+
+.admin-content::after{
+content:"Developed by MIRZA JUNAID";
+display:block;
+margin-top:50px;
+text-align:center;
+font-size:15px;
+color:#9CA3AF;
+font-weight:600;
+letter-spacing:1px;
+}

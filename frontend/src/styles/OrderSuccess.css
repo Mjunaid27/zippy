@@ -1,0 +1,259 @@
+/* ==========================================
+   ZIPPY ORDER SUCCESS
+   Developed by Mirza Junaid
+========================================== */
+
+.success-container{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    background:#F5F7FB;
+}
+
+.success-card{
+    width:100%;
+    max-width:700px;
+    background:#fff;
+    border-radius:28px;
+    padding:40px;
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+    animation:fadeUp .7s ease;
+}
+
+.success-icon{
+    font-size:85px;
+    color:#2563EB;
+    display:block;
+    margin:0 auto 20px;
+    animation:pop 1s infinite alternate;
+}
+
+.success-card h1{
+    text-align:center;
+    color:#111827;
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.success-card p{
+    text-align:center;
+    color:#6B7280;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+/* ETA */
+
+.eta-box{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    background:#EEF4FF;
+    padding:20px;
+    border-radius:18px;
+    margin-bottom:35px;
+}
+
+.bike-icon{
+    font-size:45px;
+    color:#2563EB;
+}
+
+.eta-box span{
+    color:#6B7280;
+    font-size:15px;
+}
+
+.eta-box h2{
+    margin-top:5px;
+    font-size:32px;
+    color:#111827;
+}
+
+/* TRACKER */
+
+.tracker{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:35px;
+}
+
+.tracker-item{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    color:#9CA3AF;
+    font-weight:600;
+    transition:.3s;
+}
+
+.tracker-item.active{
+    color:#2563EB;
+}
+
+.tracker-circle{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    border:2px solid #D1D5DB;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.tracker-item.active .tracker-circle{
+    background:#2563EB;
+    border-color:#2563EB;
+    color:#fff;
+}
+
+/* BUTTONS */
+
+.success-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.success-buttons a{
+    text-decoration:none;
+}
+
+.primary-btn,
+.secondary-btn{
+    border:none;
+    border-radius:16px;
+    padding:16px 26px;
+    font-size:17px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.primary-btn{
+    background:linear-gradient(135deg,#2563EB,#4F46E5);
+    color:white;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+}
+
+.secondary-btn{
+    background:#EEF2FF;
+    color:#111827;
+}
+
+.secondary-btn:hover{
+    background:#DBEAFE;
+    transform:translateY(-3px);
+}
+
+/* WATERMARK */
+
+.footer-watermark{
+    margin-top:35px;
+    font-size:15px;
+    color:#6B7280;
+    text-align:center;
+}
+
+.footer-watermark span{
+    color:#2563EB;
+    font-weight:700;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(35px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes pop{
+
+from{
+transform:scale(1);
+}
+
+to{
+transform:scale(1.08);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.success-card{
+padding:25px;
+border-radius:22px;
+}
+
+.success-card h1{
+font-size:30px;
+}
+
+.success-card p{
+font-size:15px;
+}
+
+.success-icon{
+font-size:70px;
+}
+
+.eta-box{
+padding:18px;
+gap:15px;
+}
+
+.bike-icon{
+font-size:35px;
+}
+
+.eta-box h2{
+font-size:26px;
+}
+
+.tracker-item{
+font-size:15px;
+}
+
+.tracker-circle{
+width:32px;
+height:32px;
+}
+
+.success-buttons{
+flex-direction:column;
+}
+
+.primary-btn,
+.secondary-btn{
+width:100%;
+justify-content:center;
+}
+
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import API from "../api/axios";
 import "../styles/Login.css";
@@ -22,20 +23,20 @@ function Login() {
 
       alert("Login Successful 🚀");
 
+      window.location.href = "/";
     } catch (error) {
       console.log(error.response?.data);
 
       alert(
-        error.response?.data?.message || "Login Failed"
+        error.response?.data?.message ||
+          "Login Failed"
       );
     }
   };
 
   return (
     <div className="login-page">
-
       <div className="login-card">
-
         <h1>🛵 Zippy</h1>
 
         <p className="subtitle">
@@ -43,7 +44,6 @@ function Login() {
         </p>
 
         <form onSubmit={handleLogin}>
-
           <div className="input-box">
             <FaEnvelope className="input-icon" />
 
@@ -78,15 +78,32 @@ function Login() {
           >
             Login
           </button>
-
         </form>
 
+        <p
+          style={{
+            textAlign: "center",
+            marginTop: "25px",
+            color: "#fff",
+          }}
+        >
+          Don't have an account?{" "}
+          <Link
+            to="/register"
+            style={{
+              color: "#facc15",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            Create Account
+          </Link>
+        </p>
       </div>
 
       <p className="developer">
         Developed by <span>Mirza Junaid</span>
       </p>
-
     </div>
   );
 }

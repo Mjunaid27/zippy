@@ -5,10 +5,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-
 // Customer Pages
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
@@ -24,17 +23,19 @@ import AdminUsers from "./pages/AdminUsers";
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-
       <Routes>
         {/* ================= CUSTOMER ROUTES ================= */}
 
         <Route path="/" element={<Products />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/order-success" element={<OrderSuccess />} />
+        <Route
+          path="/order-success"
+          element={<OrderSuccess />}
+        />
         <Route path="/orders" element={<MyOrders />} />
 
         {/* ================= ADMIN ROUTES ================= */}
@@ -64,7 +65,7 @@ function App() {
           element={<AdminUsers />}
         />
 
-        {/* ================= 404 PAGE ================= */}
+        {/* ================= 404 ================= */}
 
         <Route
           path="*"
@@ -72,7 +73,7 @@ function App() {
             <h1
               style={{
                 textAlign: "center",
-                marginTop: "50px",
+                marginTop: "100px",
               }}
             >
               404 | Page Not Found

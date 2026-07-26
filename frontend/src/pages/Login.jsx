@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import API from "../api/axios";
 import "../styles/Login.css";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,18 +28,21 @@ function Login() {
 
       alert("Login Successful 🚀");
 
-      window.location.href = "/products";
+      navigate("/products");
+
     } catch (error) {
       alert(
         error.response?.data?.message ||
-          "Login Failed"
+        "Login Failed"
       );
     }
   };
 
   return (
     <div className="login-page">
+
       <div className="login-card">
+
         <h1>🛵 Zippy</h1>
 
         <p className="subtitle">
@@ -45,6 +50,7 @@ function Login() {
         </p>
 
         <form onSubmit={handleLogin}>
+
           <div className="input-box">
             <FaEnvelope className="input-icon" />
 
@@ -52,9 +58,7 @@ function Login() {
               type="email"
               placeholder="Enter Email"
               value={email}
-              onChange={(e) =>
-                setEmail(e.target.value)
-              }
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -66,9 +70,7 @@ function Login() {
               type="password"
               placeholder="Enter Password"
               value={password}
-              onChange={(e) =>
-                setPassword(e.target.value)
-              }
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -79,6 +81,7 @@ function Login() {
           >
             Login
           </button>
+
         </form>
 
         <p
@@ -100,11 +103,13 @@ function Login() {
             Create Account
           </Link>
         </p>
+
       </div>
 
       <p className="developer">
         Developed by <span>Mirza Junaid</span>
       </p>
+
     </div>
   );
 }

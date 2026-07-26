@@ -21,12 +21,25 @@ import AdminOrders from "./pages/AdminOrders";
 import AdminUsers from "./pages/AdminUsers";
 
 function App() {
+  const token = localStorage.getItem("token");
+
   return (
     <BrowserRouter>
       <Routes>
-        {/* ================= CUSTOMER ROUTES ================= */}
 
-        <Route path="/" element={<Products />} />
+        {/* HOME */}
+        <Route
+          path="/"
+          element={
+            token ? (
+              <Navigate to="/products" replace />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+
+        {/* CUSTOMER */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/products" element={<Products />} />
@@ -38,8 +51,7 @@ function App() {
         />
         <Route path="/orders" element={<MyOrders />} />
 
-        {/* ================= ADMIN ROUTES ================= */}
-
+        {/* ADMIN */}
         <Route
           path="/admin"
           element={<Navigate to="/admin/dashboard" replace />}
@@ -65,8 +77,7 @@ function App() {
           element={<AdminUsers />}
         />
 
-        {/* ================= 404 ================= */}
-
+        {/* 404 */}
         <Route
           path="*"
           element={

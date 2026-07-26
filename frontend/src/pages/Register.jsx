@@ -14,9 +14,12 @@ function Register() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] =
+  const [password, setPassword] =
     useState("");
+  const [
+    confirmPassword,
+    setConfirmPassword,
+  ] = useState("");
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -52,9 +55,7 @@ function Register() {
 
   return (
     <div className="login-page">
-
       <div className="login-card">
-
         <h1>🛵 Zippy</h1>
 
         <p className="subtitle">
@@ -62,9 +63,7 @@ function Register() {
         </p>
 
         <form onSubmit={handleRegister}>
-
           <div className="input-box">
-
             <FaUser className="input-icon" />
 
             <input
@@ -76,11 +75,9 @@ function Register() {
               }
               required
             />
-
           </div>
 
           <div className="input-box">
-
             <FaEnvelope className="input-icon" />
 
             <input
@@ -92,11 +89,9 @@ function Register() {
               }
               required
             />
-
           </div>
 
           <div className="input-box">
-
             <FaLock className="input-icon" />
 
             <input
@@ -108,11 +103,9 @@ function Register() {
               }
               required
             />
-
           </div>
 
           <div className="input-box">
-
             <FaLock className="input-icon" />
 
             <input
@@ -126,7 +119,6 @@ function Register() {
               }
               required
             />
-
           </div>
 
           <button
@@ -135,7 +127,6 @@ function Register() {
           >
             Create Account
           </button>
-
         </form>
 
         <p
@@ -157,13 +148,11 @@ function Register() {
             Login
           </Link>
         </p>
-
       </div>
 
       <p className="developer">
         Developed by <span>Mirza Junaid</span>
       </p>
-
     </div>
   );
 }

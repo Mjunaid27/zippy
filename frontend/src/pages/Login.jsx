@@ -17,16 +17,17 @@ function Login() {
         password,
       });
 
-      console.log("Login Response:", response.data);
+      console.log(response.data);
 
-      localStorage.setItem("token", response.data.token);
+      localStorage.setItem(
+        "token",
+        response.data.token
+      );
 
       alert("Login Successful 🚀");
 
-      window.location.href = "/";
+      window.location.href = "/products";
     } catch (error) {
-      console.log(error.response?.data);
-
       alert(
         error.response?.data?.message ||
           "Login Failed"
